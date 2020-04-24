@@ -10,7 +10,7 @@ const path = require("path");
 require('dotenv').config(); 
 
 // routes
-books = require('./routes/api/books');
+books = require('./api/books');
 
 // Start app
 const app = express(); 
