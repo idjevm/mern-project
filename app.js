@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname, "mern-project-client", "build", "index.html"));
 }); 
 
-// app.get('/', (req, res) => res.send('Hello JV!'));
+app.get('/', (req, res) => res.send('Hello JV!'));
 
 // use Routes
 app.use('/api/books', books);
