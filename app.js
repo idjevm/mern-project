@@ -34,4 +34,4 @@ app.get('/', (req, res) => res.send('Hello JV!'));
 // use Routes
 app.use('/api/books', books);
 
-app.listen(port, () => console.log(`Server is now running on port: ${config.port}`));
+app.listen(config.port, () => console.log(`Server is now running on port: ${config.port}`));
