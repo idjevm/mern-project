@@ -1,4 +1,4 @@
 {
     "mongoURI":
-    "mongodb+srv://idjevm:Dzhoshua@123@jv-projects-wjy1n.mongodb.net/projects?retryWrites=true&w=majority"
+    "mongodb+srv://<username>:<password>@jv-projects-wjy1n.mongodb.net/<collection>?retryWrites=true&w=majority"
 }

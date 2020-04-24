@@ -10,6 +10,7 @@ class CreateBook extends Component {
     this.state = {
       title: '',
       isbn:'',
+      img_url: '',
       author:'',
       description:'',
       published_date:'',
@@ -27,6 +28,7 @@ class CreateBook extends Component {
     const data = {
       title: this.state.title,
       isbn: this.state.isbn,
+      img_url: this.state.img_url,
       author: this.state.author,
       description: this.state.description,
       published_date: this.state.published_date,
@@ -39,6 +41,7 @@ class CreateBook extends Component {
         this.setState({
           title: '',
           isbn:'',
+          img_url: '',
           author:'',
           description:'',
           published_date:'',
@@ -88,6 +91,17 @@ class CreateBook extends Component {
                     name='isbn'
                     className='form-control'
                     value={this.state.isbn}
+                    onChange={this.onChange}
+                  />
+                </div>
+
+                <div className='form-group'>
+                  <input
+                    type='text'
+                    placeholder='URL Image'
+                    name='img_url'
+                    className='form-control'
+                    value={this.state.img_url}
                     onChange={this.onChange}
                   />
                 </div>

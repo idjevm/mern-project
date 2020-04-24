@@ -7,7 +7,7 @@ const BookCard = (props) => {
 
     return(
         <div className="card-container">
-            <img src="https://commapress.co.uk/books/the-book-of-cairo/cairo-provisional-v3/image%2Fspan3" alt="" />
+            <img src={book.img_url} alt={book.title} width='250px' height='350px' />
             <div className="desc">
                 <h2>
                     <Link to={`/show-book/${book._id}`}>

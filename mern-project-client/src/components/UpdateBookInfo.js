@@ -9,6 +9,7 @@ class UpdateBookInfo extends Component {
     this.state = {
       title: '',
       isbn: '',
+      img_url: '',
       author: '',
       description: '',
       published_date: '',
@@ -25,6 +26,7 @@ class UpdateBookInfo extends Component {
         this.setState({
           title: res.data.title,
           isbn: res.data.isbn,
+          img_url: res.data.img_url,
           author: res.data.author,
           description: res.data.description,
           published_date: res.data.published_date,
@@ -46,6 +48,7 @@ class UpdateBookInfo extends Component {
     const data = {
       title: this.state.title,
       isbn: this.state.isbn,
+      img_url: this.state.img_url,
       author: this.state.author,
       description: this.state.description,
       published_date: this.state.published_date,
@@ -105,6 +108,18 @@ class UpdateBookInfo extends Component {
                 name='isbn'
                 className='form-control'
                 value={this.state.isbn}
+                onChange={this.onChange}
+              />
+            </div>
+
+            <div className='form-group'>
+            <label htmlFor="img_url">URL Image</label>
+              <input
+                type='text'
+                placeholder='Image URL'
+                name='img_url'
+                className='form-control'
+                value={this.state.img_url}
                 onChange={this.onChange}
               />
             </div>
