@@ -2,7 +2,10 @@
 
 const express = require('express')
 const connectDB = require('./config/db'); 
+const config = require('./config/config');
 const cors = require('cors'); 
+const path = require("path");
+//don't forget to npm install -s path
 
 require('dotenv').config(); 
 
@@ -19,13 +22,16 @@ connectDB();
 app.use(cors({ origin: true, credentials: true }));
 
 // Init Middleware
-app.use(express.json({ extended: false })); 
+// app.use(express.json({ extended: false })); 
 
-app.get('/', (req, res) => res.send('Hello JV!'));
+app.use(express.static(path.resolve(__dirname, "mern-project-client", "build")));
+app.get("/", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "mern-project-client", "build", "index.html"));
+}); 
+
+// app.get('/', (req, res) => res.send('Hello JV!'));
 
 // use Routes
 app.use('/api/books', books);
 
-const port = process.env.PORT || 5000
-
-app.listen(port, () => console.log(`Server is now running on port: ${port}`));
+app.listen(port, () => console.log(`Server is now running on port: ${config.port}`));

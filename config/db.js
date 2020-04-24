@@ -1,11 +1,11 @@
 // config/db.js
-
+const config = require('./config');
 const mongoose = require('mongoose');
 
 const connectDB = async () => {
     try {
         await mongoose.connect(
-            process.env.MONGO_DB_URI,
+            config.db,
             {
                 useNewUrlParser: true,
                 useUnifiedTopology: true
