@@ -29,9 +29,9 @@ app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'mern-project-client/build', 'index.html'));
 }); 
 
-app.get('/', (req, res) => res.send('Hello JV!'));
+// app.get('/', (req, res) => res.send('Hello JV!'));
 
 // use Routes
 app.use('/api/books', books);
 
-app.listen(config.port, () => console.log(`Server is now running on port: ${config.port}`));
+app.listen(config.port, (req, res) => console.log(`Server is now running on port: ${config.port}`));
