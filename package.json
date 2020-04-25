@@ -9,12 +9,6 @@
     "deploy": "now --public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "now": {
-    "alias":"mern-project",
-    "env": {
-      "PORT": "5000"
-    }
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/idjevm/mern-project.git"
