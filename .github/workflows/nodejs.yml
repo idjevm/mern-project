@@ -25,13 +25,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
-    - run: npm install -g now
     - run: npm run build --if-present
     - run: npm test
     - run: cd/mern-project-client
     - run: npm install
     - run: npm run build --if-present
-    - run: cd .. && now
     
       env:
         CI: true
