@@ -24,9 +24,9 @@ app.use(cors({ origin: true, credentials: true }));
 // Init Middleware
 // app.use(express.json({ extended: false })); 
 
-app.use(express.static(path.resolve(__dirname, "mern-project-client", "build")));
-app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "mern-project-client", "build", "index.html"));
+app.use(express.static(path.join(__dirname, 'mern-project-client', 'build')));
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'mern-project-client', 'build', 'index.html'));
 }); 
 
 // app.get('/', (req, res) => rges.send('Hello JV!'));
