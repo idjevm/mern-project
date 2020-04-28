@@ -28,13 +28,13 @@ app.use(cors({ origin: true, credentials: true }));
 // Init Middleware
 app.use(express.json({ extended: false })); 
 
+// use Routes
+app.use('/api/books', booksRoute);
+// ...more routes here...
+
 // The "catchall" handler: for any requests that doesn't match the one above, send back React's index.html file
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '/mern-project-client/build/index.html'));
 });
-
-// use Routes
-app.use('/api/books', booksRoute);
-// ...more routes here...
 
 app.listen(PORT, () => console.log(`Server is now running on port: ${PORT}`));
